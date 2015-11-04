@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  FlickrApp
+//  Flickr
 //
-//  Created by Kwame Bryan on 2015-04-04.
-//  Copyright (c) 2015 3e Interactive. All rights reserved.
+//  Created by KBryan on 2015-11-04.
+//  Copyright © 2015 KBryan. All rights reserved.
 //
 
 import UIKit

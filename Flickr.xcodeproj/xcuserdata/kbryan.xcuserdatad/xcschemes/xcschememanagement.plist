@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>FlickrApp.xcscheme</key>
+		<key>Flickr.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A9B70E771AD02B26009C4FAA</key>
+		<key>78FA0C4B1BEA57A800EAAD85</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9B70E8C1AD02B26009C4FAA</key>
+		<key>78FA0C5F1BEA57A800EAAD85</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>78FA0C6A1BEA57A800EAAD85</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,15 +1,15 @@
 //
-//  FlickrAppTests.swift
-//  FlickrAppTests
+//  FlickrTests.swift
+//  FlickrTests
 //
-//  Created by Kwame Bryan on 2015-04-04.
-//  Copyright (c) 2015 3e Interactive. All rights reserved.
+//  Created by KBryan on 2015-11-04.
+//  Copyright © 2015 KBryan. All rights reserved.
 //
 
-import UIKit
 import XCTest
+@testable import Flickr
 
-class FlickrAppTests: XCTestCase {
+class FlickrTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -23,12 +23,12 @@ class FlickrAppTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
+        self.measureBlock {
             // Put the code you want to measure the time of here.
         }
     }
