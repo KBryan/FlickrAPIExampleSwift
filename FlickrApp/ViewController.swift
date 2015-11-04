@@ -9,16 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    /**
-    Define Constants
-    */
-    let BASE_URL = "https://api.flickr.com/services/rest/"
-    let METHOD_NAME = "flickr.galleries.getPhotos"
-    let API_KEY = "aa7ecb68a8182355cbba8ddfb3d7ff64"
-    let GALLERY_ID = "5704-72157622637971865"
-    let EXTRAS = "url_m"
-    let DATA_FORMAT = "json"
-    let NO_JSON_CALLBACK = "1"
     /*
         Gallery ID taken from Flickr API docs https://www.flickr.com/services/api/flickr.galleries.getList.html
     */
@@ -53,12 +43,20 @@ class ViewController: UIViewController {
         
         /* 4 - Initialize task for getting data */
         let task = session.dataTaskWithRequest(request) {data, response, downloadError in
-            if let error = downloadError? {
-                println("Could not complete the request \(error)")
+            if let error = downloadError {
+                print("Could not complete the request \(error)")
             } else {
                 /* 5 - Success! Parse the data */
                 var parsingError: NSError? = nil
-                let parsedResult: AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError)
+                let parsedResult: AnyObject!
+                do {
+                    parsedResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+                } catch let error as NSError {
+                    parsingError = error
+                    parsedResult = nil
+                } catch {
+                    fatalError()
+                }
                 
                 if let photosDictionary = parsedResult.valueForKey("photos") as? NSDictionary {
                     if let photoArray = photosDictionary.valueForKey("photo") as? [[String: AnyObject]] {
@@ -83,13 +81,13 @@ class ViewController: UIViewController {
                                 self.photoTitle.text = photoTitle
                             })
                         } else {
-                            println("Image does not exist at \(imageURL)")
+                            print("Image does not exist at \(imageURL)")
                         }
                     } else {
-                        println("Cant find key 'photo' in \(photosDictionary)")
+                        print("Cant find key 'photo' in \(photosDictionary)")
                     }
                 } else {
-                    println("Cant find key 'photos' in \(parsedResult)")
+                    print("Cant find key 'photos' in \(parsedResult)")
                 }
             }
         }
@@ -118,7 +116,7 @@ class ViewController: UIViewController {
             urlVars += [key + "=" + "\(value)"]
         }
         
-        return (!urlVars.isEmpty ? "?" : "") + join("&", urlVars)
+        return (!urlVars.isEmpty ? "?" : "") + urlVars.joinWithSeparator("&")
     }
 
     override func didReceiveMemoryWarning() {
