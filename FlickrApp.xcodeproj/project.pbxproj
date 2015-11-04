@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78C5DB271BEA3E8800118515 /* Flick_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C5DB261BEA3E8800118515 /* Flick_Model.swift */; };
 		78E83E0E1BEA1A8E00016698 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E83E0D1BEA1A8E00016698 /* Constants.swift */; };
 		A9B70E7E1AD02B26009C4FAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B70E7D1AD02B26009C4FAA /* AppDelegate.swift */; };
 		A9B70E801AD02B26009C4FAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B70E7F1AD02B26009C4FAA /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		78C5DB261BEA3E8800118515 /* Flick_Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flick_Model.swift; sourceTree = "<group>"; };
 		78E83E0D1BEA1A8E00016698 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A9B70E781AD02B26009C4FAA /* FlickrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B70E7C1AD02B26009C4FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78C5DB251BEA3E4C00118515 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				78C5DB261BEA3E8800118515 /* Flick_Model.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		78E83E0C1BEA1A7D00016698 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +97,7 @@
 		A9B70E7A1AD02B26009C4FAA /* FlickrApp */ = {
 			isa = PBXGroup;
 			children = (
+				78C5DB251BEA3E4C00118515 /* Model */,
 				78E83E0C1BEA1A7D00016698 /* Utils */,
 				A9B70E7D1AD02B26009C4FAA /* AppDelegate.swift */,
 				A9B70E7F1AD02B26009C4FAA /* ViewController.swift */,
@@ -226,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9B70E801AD02B26009C4FAA /* ViewController.swift in Sources */,
+				78C5DB271BEA3E8800118515 /* Flick_Model.swift in Sources */,
 				A9B70E7E1AD02B26009C4FAA /* AppDelegate.swift in Sources */,
 				78E83E0E1BEA1A8E00016698 /* Constants.swift in Sources */,
 			);

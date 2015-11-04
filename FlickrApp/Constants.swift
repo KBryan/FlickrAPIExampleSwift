@@ -18,4 +18,16 @@ let GALLERY_ID = "5704-72157622637971865"
 let EXTRAS = "url_m"
 let DATA_FORMAT = "json"
 let NO_JSON_CALLBACK = "1"
+/* 2 - API method arguments */
+let METHOD_ARGUMENTS = [
+    "method": METHOD_NAME,
+    "api_key": API_KEY,
+    "gallery_id": GALLERY_ID,
+    "extras": EXTRAS,
+    "format": DATA_FORMAT,
+    "nojsoncallback": NO_JSON_CALLBACK
+]
+/* 3 - Initialize session and url */
+// changed from session
+
 
