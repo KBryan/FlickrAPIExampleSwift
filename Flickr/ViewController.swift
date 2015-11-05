@@ -15,9 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     var myFlickrModel:Flick_Model!
     
-    @IBAction func getImageFromFlickr(sender: AnyObject) {
-        print("Button Selected")
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
           myFlickrModel = Flick_Model(photoView: photoImageView, myTitle: photoTitle)

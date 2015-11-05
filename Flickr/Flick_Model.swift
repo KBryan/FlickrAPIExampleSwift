@@ -4,12 +4,17 @@ class Flick_Model: NSObject {
     
     private var photoImageView:UIImageView!
     private var photoTitle:UILabel!
-    
+    /// Flickr_Model Initializor
+    ///
+    /// param1: passes a UIImage to be updated on the view
+    /// param2: passes a UILabel to be updated on the view
     init(photoView:UIImageView,myTitle:UILabel) {
         photoImageView = photoView
         photoTitle = myTitle
     }
-    
+    /// Get an Image from the Flickr API
+    ///
+    /// takes no parameter and returns nothing
     func getImageFromFlickr()
     {
         // STep one create a session
@@ -69,8 +74,9 @@ class Flick_Model: NSObject {
         }
         task.resume()
     }
-    // Helper function: Given a dictionary of parameters/
-    // and convert a string for url
+    /// Helper function: Takes a dictionary and returns a string
+    ///
+    /// Given a dictionary of parameters / and convert a string for url
     func escapedParameters(parameters:[String:AnyObject]) ->String {
         var urlVars = [String]()
         
