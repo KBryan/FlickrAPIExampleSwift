@@ -8,16 +8,36 @@
 
 import UIKit
 
+@IBDesignable
 
 class ExtendedImage: UIImageView {
     
-    override func layoutSublayersOfLayer(layer: CALayer) {
+    @IBInspectable var cornerRadius:CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+            clipsToBounds = true
 
-        layer.cornerRadius = self.frame.width / 2
-        clipsToBounds = true
-        layer.borderWidth = 5
-        layer.borderColor = UIColor.whiteColor().CGColor
-    
+        }
+        willSet {
+            layer.cornerRadius = self.frame.width / 2
+            layer.borderColor = UIColor.whiteColor().CGColor
+            
+        }
     }
-
+    @IBInspectable var borderWidth:CGFloat = 0 {
+        didSet {
+            layer.borderWidth = borderWidth
+        }
+        willSet {
+            layer.borderWidth = 5
+        }
+    }
+    @IBInspectable var borderColor:UIColor = UIColor.whiteColor() {
+        didSet {
+            layer.borderColor = borderColor.CGColor
+        }
+        willSet {
+            layer.borderColor = UIColor.whiteColor().CGColor
+        }
+    }
 }

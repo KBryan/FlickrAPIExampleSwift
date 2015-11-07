@@ -45,18 +45,18 @@ class Flick_Model: NSObject {
                 }
                 if let photosDictionary = parsedResult.valueForKey("photos") as? NSDictionary {
                     if let photoArray = photosDictionary.valueForKey("photo") as? [[String:AnyObject]] {
-                        // grab a single image
+                        /// grab a single image
                         let randomPhotoIndex = Int(arc4random_uniform(UInt32(photoArray.count)))
                         let photoDictionary = photoArray[randomPhotoIndex] as [String:AnyObject]
-                        // grab the image url and title
+                        /// grab the image url and title
                         let photoTitle = photoDictionary["title"] as? String
                         let imageUrlString = photoDictionary["url_m"] as? String
                         let imageURL = NSURL(string: imageUrlString!)
-                        // if an image exists at the url set the image and title
+                        /// if an image exists at the url set the image and title
                         if let imageData = NSData(contentsOfURL: imageURL!) {
-                            // async // submits a block a asynchronous execution on a dispatch queue
+                            /// async // submits a block a asynchronous execution on a dispatch queue
                             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                // set the image and the title for the view
+                                /// set the image and the title for the view
                                 self.photoImageView.image = UIImage(data: imageData)
                                 self.photoImageView.clipsToBounds = true
                                 self.photoTitle.text = photoTitle

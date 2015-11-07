@@ -80,6 +80,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7895470A1BEB99FA00476766 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		78FA0C431BEA57A800EAAD85 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +110,7 @@
 		78FA0C4E1BEA57A800EAAD85 /* Flickr */ = {
 			isa = PBXGroup;
 			children = (
+				7895470A1BEB99FA00476766 /* Frameworks */,
 				78FA0C831BEA821600EAAD85 /* View */,
 				78FA0C801BEA5B3D00EAAD85 /* Model */,
 				78FA0C7D1BEA57BE00EAAD85 /* Utils */,
@@ -435,6 +443,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Flickr",
+				);
 				INFOPLIST_FILE = Flickr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.3einteractive.Flickr;
@@ -446,6 +458,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Flickr",
+				);
 				INFOPLIST_FILE = Flickr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.3einteractive.Flickr;

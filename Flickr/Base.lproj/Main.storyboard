@@ -25,13 +25,24 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IUq-0x-BDl" customClass="ExtendedImage" customModule="Flickr" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Yosemite" translatesAutoresizingMaskIntoConstraints="NO" id="IUq-0x-BDl" customClass="ExtendedImage" customModule="Flickr" customModuleProvider="target">
                                 <rect key="frame" x="225" y="140" width="150" height="150"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="qod-BO-GM3"/>
                                     <constraint firstAttribute="width" constant="150" id="xAb-2u-Wna"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="68"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.69564788509999997" green="0.64844398140000004" blue="0.1133954687" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mO-IE-uCs">
                                 <rect key="frame" x="241" y="368" width="119" height="30"/>
@@ -66,7 +77,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="125" y="411"/>
+            <point key="canvasLocation" x="211" y="379"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Yosemite" width="874" height="810"/>
+    </resources>
 </document>
