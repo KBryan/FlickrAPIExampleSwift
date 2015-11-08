@@ -15,7 +15,7 @@
 		78FA0C651BEA57A800EAAD85 /* FlickrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FA0C641BEA57A800EAAD85 /* FlickrTests.swift */; };
 		78FA0C701BEA57A800EAAD85 /* FlickrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FA0C6F1BEA57A800EAAD85 /* FlickrUITests.swift */; };
 		78FA0C7F1BEA57E300EAAD85 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FA0C7E1BEA57E300EAAD85 /* Constants.swift */; };
-		78FA0C821BEA5B8100EAAD85 /* Flick_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FA0C811BEA5B8100EAAD85 /* Flick_Model.swift */; };
+		78FA0C821BEA5B8100EAAD85 /* FlickModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FA0C811BEA5B8100EAAD85 /* FlickModel.swift */; };
 		78FA0C871BEA82DA00EAAD85 /* ExtendedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FA0C861BEA82DA00EAAD85 /* ExtendedImage.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +51,7 @@
 		78FA0C6F1BEA57A800EAAD85 /* FlickrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrUITests.swift; sourceTree = "<group>"; };
 		78FA0C711BEA57A800EAAD85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78FA0C7E1BEA57E300EAAD85 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		78FA0C811BEA5B8100EAAD85 /* Flick_Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flick_Model.swift; sourceTree = "<group>"; };
+		78FA0C811BEA5B8100EAAD85 /* FlickModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickModel.swift; sourceTree = "<group>"; };
 		78FA0C861BEA82DA00EAAD85 /* ExtendedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,7 +152,7 @@
 		78FA0C801BEA5B3D00EAAD85 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				78FA0C811BEA5B8100EAAD85 /* Flick_Model.swift */,
+				78FA0C811BEA5B8100EAAD85 /* FlickModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -299,7 +299,7 @@
 			files = (
 				78FA0C521BEA57A800EAAD85 /* ViewController.swift in Sources */,
 				78FA0C871BEA82DA00EAAD85 /* ExtendedImage.swift in Sources */,
-				78FA0C821BEA5B8100EAAD85 /* Flick_Model.swift in Sources */,
+				78FA0C821BEA5B8100EAAD85 /* FlickModel.swift in Sources */,
 				78FA0C501BEA57A800EAAD85 /* AppDelegate.swift in Sources */,
 				78FA0C7F1BEA57E300EAAD85 /* Constants.swift in Sources */,
 			);
