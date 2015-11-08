@@ -1,17 +1,24 @@
 import UIKit
 
-class Flick_Model: NSObject {
+class FlickModel {
     
-    private var photoImageView:UIImageView!
-    private var photoTitle:UILabel!
+    private var _photoImageView: UIImageView!
+    private var _photoTitle: UILabel?
+    
+    typealias JSONType = [String : AnyObject]
     /// Flickr_Model Initializor
     ///
     /// param1: passes a UIImage to be updated on the view
     /// param2: passes a UILabel to be updated on the view
-    init(photoView:UIImageView,myTitle:UILabel) {
-        photoImageView = photoView
-        photoTitle = myTitle
+    init(photoView: UIImageView, myTitle: UILabel) {
+        _photoImageView = photoView
+        _photoTitle = myTitle
     }
+    
+    init(photoView: UIImageView) {
+        _photoImageView = photoView
+    }
+    
     /// Get an Image from the Flickr API
     ///
     /// takes no parameter and returns nothing
@@ -19,15 +26,18 @@ class Flick_Model: NSObject {
     {
         // STep one create a session
         let session = NSURLSession.sharedSession()
+        
         // create a URL String
-        let urlString = BASE_URL + escapedParameters(METHOD_ARGUMENTS)
-        let url = NSURL(string: urlString)!
+        let urlString = BASE_URL + FlickModel.escapedParameters(METHOD_ARGUMENTS)
+        guard let url = NSURL(string: urlString) else { return }
+        
         // create a URL Request
         let request = NSURLRequest(URL: url)
         print(request)
         // Initialize task for getting data
-        let task = session.dataTaskWithRequest(request) { (data , response, downloadError) -> Void in
+        let task = session.dataTaskWithRequest(request) { data , response, downloadError in
             // check is we are successful
+            
             if let error = downloadError {
                 print("could not complete request \(error)")
             } else {
@@ -43,41 +53,45 @@ class Flick_Model: NSObject {
                 } catch {
                     fatalError()
                 }
-                if let photosDictionary = parsedResult.valueForKey("photos") as? NSDictionary {
-                    if let photoArray = photosDictionary.valueForKey("photo") as? [[String:AnyObject]] {
-                        /// grab a single image
-                        let randomPhotoIndex = Int(arc4random_uniform(UInt32(photoArray.count)))
-                        let photoDictionary = photoArray[randomPhotoIndex] as [String:AnyObject]
-                        /// grab the image url and title
-                        let photoTitle = photoDictionary["title"] as? String
-                        let imageUrlString = photoDictionary["url_m"] as? String
-                        let imageURL = NSURL(string: imageUrlString!)
-                        /// if an image exists at the url set the image and title
-                        if let imageData = NSData(contentsOfURL: imageURL!) {
-                            /// async // submits a block a asynchronous execution on a dispatch queue
-                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                /// set the image and the title for the view
-                                self.photoImageView.image = UIImage(data: imageData)
-                                self.photoImageView.clipsToBounds = true
-                                self.photoTitle.text = photoTitle
-                            })
-                        } else {
-                            print("Image does not exist")
-                        }
-                    }else {
-                        print("can't find key photo")
-                    }
-                } else {
+                
+                guard let photosDictionary = parsedResult.valueForKey("photos") as? NSDictionary else {
                     print("cant find key parsed result")
+                    return
+                }
+                
+                guard let photoArray = photosDictionary.valueForKey("photo") as? [JSONType] else {
+                    print("can't find key photo")
+                    return
+                }
+                
+                let randomPhotoIndex = Int(arc4random_uniform(UInt32(photoArray.count)))
+                let photoDictionary = photoArray[randomPhotoIndex] as JSONType
+                
+                /// grab the image url and title
+                guard let photoTitle = photoDictionary["title"] as? String,
+                    let imageUrlString = photoDictionary["url_m"] as? String,
+                    let imageURL = NSURL(string: imageUrlString),
+                    let imageData = NSData(contentsOfURL: imageURL) else {
+                        print("Image does not exist")
+                        return
+                }
+                
+                dispatch_async(dispatch_get_main_queue()){ [unowned self] in
+                    /// set the image and the title for the view
+                    self._photoImageView.image = UIImage(data: imageData)
+                    self._photoImageView.clipsToBounds = true
+                    self._photoTitle?.text = photoTitle
                 }
             }
         }
+        
         task.resume()
     }
+    
     /// Helper function: Takes a dictionary and returns a string
     ///
     /// Given a dictionary of parameters / and convert a string for url
-    func escapedParameters(parameters:[String:AnyObject]) ->String {
+    class func escapedParameters(parameters: JSONType) ->String {
         var urlVars = [String]()
         
         for (key,value) in parameters {
@@ -90,13 +104,4 @@ class Flick_Model: NSObject {
         }
         return (!urlVars.isEmpty ? "?" : "") + urlVars.joinWithSeparator("&")
     }
-
 }
-
-
-
-
-
-
-
-

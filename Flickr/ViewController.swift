@@ -14,22 +14,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var photoTitle: UILabel!
     
     @IBOutlet weak var photoImageView: UIImageView!
-    var myFlickrModel:Flick_Model!
+    var myFlickrModel: FlickModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-          myFlickrModel = Flick_Model(photoView: photoImageView, myTitle: photoTitle)
+        myFlickrModel = FlickModel(photoView: photoImageView, myTitle: photoTitle)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    @IBAction func GetNextImage(sender: AnyObject) {
+    @IBAction func getNextImage(sender: AnyObject) {
         myFlickrModel.getImageFromFlickr()
-
     }
-
 }
 
