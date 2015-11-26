@@ -16,12 +16,10 @@ class ExtendedImage: UIImageView {
         didSet {
             layer.cornerRadius = cornerRadius
             clipsToBounds = true
-
         }
         willSet {
             layer.cornerRadius = self.frame.width / 2
             layer.borderColor = UIColor.whiteColor().CGColor
-            
         }
     }
     @IBInspectable var borderWidth:CGFloat = 0 {

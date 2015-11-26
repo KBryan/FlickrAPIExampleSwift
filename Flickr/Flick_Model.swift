@@ -90,7 +90,6 @@ class Flick_Model: NSObject {
         }
         return (!urlVars.isEmpty ? "?" : "") + urlVars.joinWithSeparator("&")
     }
-
 }
 
 
