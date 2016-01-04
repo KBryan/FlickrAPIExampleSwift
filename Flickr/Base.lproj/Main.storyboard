@@ -25,7 +25,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Yosemite" translatesAutoresizingMaskIntoConstraints="NO" id="IUq-0x-BDl" customClass="ExtendedImage" customModule="Flickr" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Yosemite" translatesAutoresizingMaskIntoConstraints="NO" id="IUq-0x-BDl" customClass="ExtendedImage" customModule="Flickr" customModuleProvider="target">
                                 <rect key="frame" x="225" y="140" width="150" height="150"/>
                                 <animations/>
                                 <constraints>
@@ -54,7 +54,7 @@
                                     <color key="titleColor" red="0.98511354139999996" green="0.98883515609999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="GetNextImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oTH-MY-uG6"/>
+                                    <action selector="getNextImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CK9-F4-sNL"/>
                                 </connections>
                             </button>
                         </subviews>
